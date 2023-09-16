@@ -1,0 +1,43 @@
+alias cra="cargo add"
+alias crad="cargo add --dev"
+alias crb="cargo build"
+alias crbt="cargo build --tests"
+alias crf="cargo fmt"
+alias cri="cargo install"
+alias crm="cargo remove"
+alias crr="cargo run"
+alias crt="cargo test"
+alias crw="cargo watch"
+alias crwc="cargo watch -c"
+alias crx="cargo watch -x"
+alias crxc="cargo watch -c -x"
+alias crxcb="cargo watch -c -x build"
+alias cwb="cargo watch -c -x build"
+alias cwbt="cargo watch -c -x build -- --tests"
+alias cwx="cargo watch -c -x"
+
+rust_log_debug() {
+    export RUST_LOG=debug
+}
+export -f rust_log_debug
+defn rld rust_log_debug
+
+rust_log_info() {
+    export RUST_LOG=info
+}
+export -f rust_log_info
+defn rli rust_log_info
+
+cargo_test_nocapture() {
+    cargo test "$@" -- --nocapture
+}
+export -f cargo_test_nocapture
+defn crtn cargo_test_nocapture
+defn ctn cargo_test_nocapture
+defn rtn cargo_test_nocapture
+
+export RUST_BACKTRACE=1
+export RUST_LOG=info
+
+alias rwb="wasm-pack build --target web"
+alias rwbw='cargo watch -i .gitignore -i "pkg/*" -s "wasm-pack build --target web"'
