@@ -1,3 +1,8 @@
+install_rustup() {
+    curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | bash -s -- -y
+}
+export -f install_rustup
+
 alias cra="cargo add"
 alias crad="cargo add --dev"
 alias crb="cargo build"
