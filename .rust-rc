@@ -42,7 +42,7 @@ defn ctn cargo_test_nocapture
 defn rtn cargo_test_nocapture
 
 export RUST_BACKTRACE=1
-export RUST_LOG=info
+# export RUST_LOG=info
 
 alias rwb="wasm-pack build --target web"
 alias rwbw='cargo watch -i .gitignore -i "pkg/*" -s "wasm-pack build --target web"'
